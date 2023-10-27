@@ -4,21 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleProgram1
+namespace PaliDromeProgram
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            int i, sum = 0, n;
-            Console.Write("Enter the Nth Number : ");
-            n = int.Parse(Console.ReadLine());
-            for (i = 0; i <= n; i++)
+            int num, rev, sum = 0, temp;
+            Console.Write("Enter the number: ");
+            num = int.Parse(Console.ReadLine());
+            temp = num;
+            while (num > 0)
             {
-                sum = sum + i;
+                rev = num % 10;
+                sum = (sum * 10) + rev;
+                num = num / 10;
             }
-            Console.WriteLine("\nSum of N Numbers : " + sum);
-            Console.ReadLine();
+            if (temp == sum)
+                Console.Write("Yay! the given number is Palindrome.");
+            else
+                Console.Write("Oops! the given number is not Palindrome.");
+            Console.ReadKey();
+
         }
     }
 }

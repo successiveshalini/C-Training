@@ -46,7 +46,7 @@ namespace Assignment1
                 Console.WriteLine("Third largest value not exist : ");
                 return int.MinValue;
             }
-            
+
 
             return thirdLargest;
 
@@ -57,30 +57,37 @@ namespace Assignment1
             //int[] arr = { 12, 45, 1, 3, 67, 6, 98, 23, 14, 56 };
             int size;
             Console.WriteLine("Enter the size : ");
-            size = Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[size];
-           
-            // array input
-            for(int i = 0; i < size; i++)
+            int[] arr;
+            int thirdLargestNumber;
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out size))
             {
-                Console.WriteLine("Enter the element at {0} index : ", i);
-                arr[i] = Convert.ToInt32(Console.ReadLine());
+                arr = new int[size];
+
+                // array input
+                for (int i = 0; i < size; i++)
+                {
+                    Console.WriteLine("Enter the element at {0} index : ", i);
+                    arr[i] = Convert.ToInt32(Console.ReadLine());
+                }
+                // print
+                for (int i = 0; i < size; i++)
+                {
+                    Console.Write("{0} ", arr[i]);
+                }
+
+
+                thirdLargestNumber = getThirdLargest(arr);
+
+                if (thirdLargestNumber != int.MinValue)
+                {
+                    Console.WriteLine("\nThe third largest element in the array is: " + thirdLargestNumber);
+                }
             }
-            // print
-            for(int i = 0; i < size; i++)
+            else
             {
-                Console.Write("{0} ", arr[i]);
-            }
-
-
-            int thirdLargestNumber = getThirdLargest(arr);
-
-            if (thirdLargestNumber != int.MinValue)
-            {
-                Console.WriteLine("\nThe third largest element in the array is: " + thirdLargestNumber);
+                Console.WriteLine("Invalid size input");
             }
         }
-        
-
     }
 }

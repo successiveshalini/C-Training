@@ -1,0 +1,46 @@
+6) Write a program to implement Async await with proper justification. 
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TaskBasedAsynchronousProgramming
+{
+    public class Employee
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }    
+        public double Salary { get; set; }
+        public string Address { get; set; }
+        public async static void SomeMethod()
+        {
+            Employee emp = await GetEmployeeDetails();
+            Console.WriteLine($"ID: {emp.ID}, Name : {emp.Name}, Salary :     {emp.Salary}, Age :  {emp.Age}, Address : {emp.Address}");
+        }
+         public static async Task<Employee> GetEmployeeDetails()
+        {
+            Employee employee = new Employee();
+            employee.ID = 1;
+            employee.Name = "soni";
+            employee.Age = 21;
+            employee.Salary = 280000;
+            employee.Address = "Delhi";
+            return employee;
+        }
+    }
+    public class program
+   {
+        static void Main(string[] args)
+         {
+           Console.WriteLine($"Main Thread Started:");
+            Employee.SomeMethod();  
+            Console.WriteLine($"Main Thread Completed:");
+            Console.ReadKey();
+        }
+     } 
+}

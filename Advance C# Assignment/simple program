@@ -1,0 +1,66 @@
+
+5) What will be the output of below code snipped : 
+    
+static void Main()
+{
+  Func <string,string> output=delegate(string name)
+{
+  return "Hello" + name;
+};
+Console.Write(output("James"));
+}
+
+
+static void Main()
+{
+  Action <int> output = i=>Console.Write(i);
+  output(10);
+}
+         
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HelloProgram
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Func<string, string> output = delegate (string name)
+            {
+                return "Hello" + name;
+            };
+            Console.Write(output("James"));
+            Console.ReadKey();  
+
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HelloProgram
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Action<int> output = i => Console.Write(i);
+            output(10);
+            Console.ReadKey();  
+
+        }
+    }
+}

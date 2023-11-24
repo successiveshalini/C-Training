@@ -1,0 +1,25 @@
+
+2) When should we write multiple catch blocks for a Single Try block? 
+
+1.Multiple Catch Block =  Multiple catch blocks are used to handle different types of exceptions means each catch block is used to handle different types of  exception.
+
+2. Single Try Block = A try block is the block of code (Contains a set of Statements) in which  exceptions can occur.
+
+
+Syntax :-
+      
+
+Try
+{
+  // Code  that may throw an exception 
+}
+
+catch(Exception)
+{
+  // code
+}
+
+
+
+
+

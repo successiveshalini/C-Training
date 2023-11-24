@@ -1,0 +1,35 @@
+
+4) Try to use Func, Action and Predicate any program. 
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Func Action Predicate Program
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Func<int, int, int> addFunction = (a, b) => a + b;
+            Console.WriteLine($"Func<int, int, int> addFunction: {addFunction(24,76)}");
+
+            
+            Action<string> greetAction = name => Console.WriteLine($"Hello, {name}!");
+            greetAction("Ram");
+
+            
+            Predicate<int> isEvenPredicate = num => num % 2 == 0;
+            Console.WriteLine($"Predicate<int> isEvenPredicate(2): {isEvenPredicate(8)}");
+            Console.WriteLine($"Predicate<int> isEvenPredicate(3):    
+
+{isEvenPredicate(21)}");
+            Console.ReadKey();  
+        }
+    }
+}
+

@@ -1,0 +1,72 @@
+
+3) How to define a delegate and call any method or event using it? 
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DelegetPrograms1
+{
+    public class Program
+    {
+        public delegate void addnum(int a, int b);
+        public delegate void subnum(int a, int b);
+        public delegate void mulnum(int a, int b); 
+        public delegate void divnum(int a, int b);  
+           
+        public void sum(int a, int b)
+        {
+            Console.WriteLine("(100 + 40) = {0}", a + b);
+        }
+        public void subtract(int a, int b)
+        {
+            Console.WriteLine("(100 - 60) = {0}", a - b);
+        }
+        public void multiply(int a, int b)
+        {
+            Console.WriteLine("(20 * 6) = {0}", a * b);
+        }
+        public void division(int a, int b)
+        {
+            Console.WriteLine("(100 % 20) = {0}", a % b);
+        }
+
+        static void Main(string[] args)
+        {
+            Program obj = new Program();
+
+            addnum del1 = new addnum(obj.sum);
+            Sub num del2 = new sub num(obj.subtract);
+          
+
+            Mul num del3 = new M ul num(obj.multiply);
+            Div num del4 = new div num(obj.division);
+            
+            del1(100, 40);
+            del2(100, 60);
+            del3(20, 6);
+            del4(100, 20);
+            Console.ReadKey();
+            
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
